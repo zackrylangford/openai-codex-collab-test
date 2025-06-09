@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        nav a { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        {% for page in pages %}
+        <a href="{{ page }}.html">{{ page.title() }}</a>
+        {% endfor %}
+    </nav>
+    <hr>
+    <main>
+        {{ content | safe }}
+    </main>
+</body>
+</html>
