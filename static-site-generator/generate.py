@@ -30,7 +30,6 @@ def build_site():
 
     # Prevent GitHub Pages from running Jekyll
     (OUTPUT_DIR / '.nojekyll').touch()
-
     for name, html in pages.items():
         rendered = template.render(title=name.title(), content=html, pages=pages.keys())
         with open(OUTPUT_DIR / f"{name}.html", "w", encoding="utf-8") as f:
