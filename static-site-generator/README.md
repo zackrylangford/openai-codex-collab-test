@@ -17,6 +17,11 @@ This project is a minimal Python-based static site generator. It converts Markdo
    ```bash
    python generate.py
    ```
-4. The generated HTML files will appear in `site/`.
+4. The generated HTML files will appear in the `site/` directory (ignored from version control).
 
-You can deploy the contents of `site/` to any static hosting service such as GitHub Pages.
+### GitHub Pages Deployment
+
+A workflow (`.github/workflows/deploy.yml`) is included to automatically build
+the site and deploy it to **GitHub Pages**. Enable GitHub Pages in the repository
+settings and select "GitHub Actions" as the source. Pushing changes to the
+`work` branch will trigger the workflow and publish the updated site.

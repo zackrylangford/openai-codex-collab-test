@@ -28,6 +28,8 @@ def build_site():
     # Ensure output directory exists
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Prevent GitHub Pages from running Jekyll
+    (OUTPUT_DIR / '.nojekyll').touch()
     for name, html in pages.items():
         rendered = template.render(title=name.title(), content=html, pages=pages.keys())
         with open(OUTPUT_DIR / f"{name}.html", "w", encoding="utf-8") as f:
